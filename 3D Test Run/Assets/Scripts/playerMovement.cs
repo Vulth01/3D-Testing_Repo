@@ -14,7 +14,7 @@ public class playerMovement : MonoBehaviour
 
     float GroundThreshold = 0.4f;
 
-
+    public Animator playerAnimator;
 
 
     public Transform groundCheckTrans;
@@ -61,7 +61,7 @@ public class playerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");// "Input Axis Verticle is not setup."  error is given if you mispell it 
 
-
+        playerAnimator.SetFloat("playerSpeed", x + z);
         Vector3 move = transform.right * x + transform.forward * z;
         if (isSprinting)
         {

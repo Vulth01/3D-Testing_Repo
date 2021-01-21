@@ -9,7 +9,7 @@ public class mouseLook : MonoBehaviour
 
     float xRotation = 0f;
 
-    public Transform playerBodyTrans;
+   
 
     [Header("cached components")]
 
@@ -32,11 +32,21 @@ public class mouseLook : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * inputManager.mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * inputManager.mouseSensitivity;
 
+
+
+       
+
+
+
         xRotation -= mouseY;
+
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
         playerCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
         playerTrans.Rotate(Vector3.up * mouseX);
-        playerBodyTrans.Rotate(Vector3.up * mouseX);
+
+
 
     }
 }

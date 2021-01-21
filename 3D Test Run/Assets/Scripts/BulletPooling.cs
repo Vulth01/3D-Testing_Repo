@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BulletPooling : MonoBehaviour
 {
     [System.Serializable]
@@ -11,6 +12,16 @@ public class BulletPooling : MonoBehaviour
         public GameObject prefab;
         public int poolSize;
     }
+
+    #region Singleton
+
+    public static BulletPooling Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion
+
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
 
@@ -30,13 +41,25 @@ public class BulletPooling : MonoBehaviour
         }
     }
 
-    public void SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            Debug.LogError("pool with tag " + tag + " doesnt exist!!!!!!!");
+            Debug.LogWarning("pool with tag " + tag + " doesnt exist!!!!!!!");
+            return null;
+        }
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+
+
+
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
-        objectToSpawn.SetActive(true);
+        objectToSpawn.SetActive(true);    
 
+        poolDictionary[tag].Enqueue(objectToSpawn);
+
+        return objectToSpawn;
     }
     void Update()
     {

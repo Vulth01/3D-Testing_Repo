@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736497609117658386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0841, z: 0.28954}
+  m_LocalPosition: {x: 0, y: 2.97, z: -11.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1736497610276105794}
@@ -54,15 +54,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736497610276105795}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.013730233, y: 0.013730233, z: 0.013730233}
   m_Children:
   - {fileID: 6729490199945738396}
   - {fileID: 1736497609117658385}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &6016755231701620029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,11 +75,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442e33a0dcc790c45b8191d22623cf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponTag: Bullet1
   bulletPrefab: {fileID: 4960073409033269607, guid: d2eca9f16c0da154ca3c62c07dc06727,
     type: 3}
   BulletPoolObject: {fileID: 4960073409033269607, guid: d2eca9f16c0da154ca3c62c07dc06727,
     type: 3}
   shootPointTrans: {fileID: 1736497609117658385}
+  playerObject: {fileID: 0}
   weaponsManager: {fileID: 0}
 --- !u!1001 &1736497609887273862
 PrefabInstance:

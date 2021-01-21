@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.45091903, g: 0.49924666, b: 0.566128, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 6523077546601318581, guid: 66d44f3c89c2a58429779b2b2bc5e577,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6523077546601318581, guid: 66d44f3c89c2a58429779b2b2bc5e577,
         type: 3}
@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 6523077546601318581, guid: 66d44f3c89c2a58429779b2b2bc5e577,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.19941108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6523077546601318581, guid: 66d44f3c89c2a58429779b2b2bc5e577,
         type: 3}
@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 6523077546601318581, guid: 66d44f3c89c2a58429779b2b2bc5e577,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.979916
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6523077546601318581, guid: 66d44f3c89c2a58429779b2b2bc5e577,
         type: 3}
@@ -275,13 +275,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942803487}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -1.585989, y: 13.29, z: -27.78}
+  m_LocalRotation: {x: 0.41052157, y: -0.6340628, z: -0.10045009, w: 0.6475694}
+  m_LocalPosition: {x: 35, y: 13.29, z: -6.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.847002, y: -98.87601, z: -45.351}
 --- !u!1 &1057391286
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   - tag: Bullet1
     prefab: {fileID: 4960073409033269607, guid: d2eca9f16c0da154ca3c62c07dc06727,
       type: 3}
-    poolSize: 150
+    poolSize: 20
   - tag: 
     prefab: {fileID: 0}
     poolSize: 0
@@ -458,7 +458,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -493,7 +493,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c195b1b9ae19d064082c33a22dc5a0f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
