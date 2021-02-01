@@ -18,11 +18,13 @@ public class WeaponBlueprint : MonoBehaviour
     public GameObject BulletPoolObject;
     public Transform shootPointTrans;
 
+    protected PlayerWeaponsManager playerWeaponsManager;
+
+    protected GameObject playerObject;
 
 
-    public GameObject playerObject;
 
-    private Transform playerLookPoint;
+    protected Transform playerLookPoint;
 
     [HideInInspector]
     public PlayerWeaponsManager weaponsManager;
@@ -31,9 +33,10 @@ public class WeaponBlueprint : MonoBehaviour
     BulletPooling bulletPooler;//not used yet **checkup on it
     protected void setUpWeapon()
     {
-        playerObject = FindObjectOfType<playerMovement>().gameObject;
+        playerWeaponsManager = FindObjectOfType<PlayerWeaponsManager>();
+        playerObject = playerWeaponsManager.gameObject;
 
-        playerLookPoint = playerObject.GetComponentInChildren<PlayerLookPoint>().transform;
+        playerLookPoint = playerWeaponsManager.playerLookTrans;
 
 
         Debug.Log(playerLookPoint.transform);

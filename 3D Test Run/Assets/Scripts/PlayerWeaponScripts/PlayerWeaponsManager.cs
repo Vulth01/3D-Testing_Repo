@@ -8,6 +8,7 @@ public class PlayerWeaponsManager : MonoBehaviour
 
     public GameObject startingGun;
     public Transform GunStartingPoint;
+    public Transform playerLookTrans;
     public WeaponBlueprint[] currentWeapons;
     public int equipedWeaponID;
 
