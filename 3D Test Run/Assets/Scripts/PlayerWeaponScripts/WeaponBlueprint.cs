@@ -22,8 +22,6 @@ public class WeaponBlueprint : MonoBehaviour
 
     protected GameObject playerObject;
 
-
-
     protected Transform playerLookPoint;
 
     [HideInInspector]
@@ -37,8 +35,7 @@ public class WeaponBlueprint : MonoBehaviour
         playerObject = playerWeaponsManager.gameObject;
 
         playerLookPoint = playerWeaponsManager.playerLookTrans;
-
-
+ 
         Debug.Log(playerLookPoint.transform);
 
         bulletPooler = BulletPooling.Instance;
@@ -50,7 +47,7 @@ public class WeaponBlueprint : MonoBehaviour
 
         Vector3 shootDirection = playerLookPoint.position - shootPointTrans.position;
         Debug.Log(shootDirection);
-        bullet.GetComponent<Rigidbody>().AddForce(bulletSpeed * (shootDirection));
+        bullet.GetComponent<Rigidbody>().AddForce(bulletSpeed * (transform.right.normalized));
 
     }
 
