@@ -35,21 +35,33 @@ public class WeaponBlueprint : MonoBehaviour
         playerObject = playerWeaponsManager.gameObject;
 
         playerLookPoint = playerWeaponsManager.playerLookTrans;
- 
+
         Debug.Log(playerLookPoint.transform);
 
         bulletPooler = BulletPooling.Instance;
     }
 
-    public void shootWeapon(string bulletTag, Vector3 BulletPosition, Quaternion BulletRotation)
+    public void shootWeaponProjectile(string bulletTag, Vector3 BulletPosition, Quaternion BulletRotation)
     {
         GameObject bullet = bulletPooler.SpawnFromPool(bulletTag, BulletPosition, BulletRotation);
 
-        Vector3 shootDirection = playerLookPoint.position - shootPointTrans.position;
-        Debug.Log(shootDirection);
-        bullet.GetComponent<Rigidbody>().AddForce(bulletSpeed * (transform.right.normalized));
+
+        
+       
+       
+        bullet.GetComponent<Rigidbody>().AddForce( transform.right.normalized*bulletSpeed);
 
     }
+    public void shootWeaponRaycast()
+    {
+        
 
+
+        
+       
+       
+      
+
+    }
 }
 

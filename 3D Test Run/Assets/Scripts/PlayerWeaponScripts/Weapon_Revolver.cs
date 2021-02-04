@@ -16,7 +16,7 @@ public class Weapon_Revolver : WeaponBlueprint
     private void WeaponsManager_OnShoot(object sender, EventArgs e)
     {
 
-        shootWeapon(WeaponTag, shootPointTrans.position, shootPointTrans.rotation);
+        shootWeaponProjectile(WeaponTag, shootPointTrans.position, shootPointTrans.rotation);
 
 
         //Object original, Vector3 position, Quaternion rotation, Transform parent);
