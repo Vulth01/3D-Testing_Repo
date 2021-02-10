@@ -8,8 +8,10 @@ public class Weapon_Revolver : WeaponBlueprint
     // Start is called before the first frame update
     void Start()
     {
+        bulletSpeed = 25f;
+        bulletDamage = 15;
         setUpWeapon();
-
+       
         weaponsManager.OnShoot += WeaponsManager_OnShoot;
     }
 
@@ -19,10 +21,6 @@ public class Weapon_Revolver : WeaponBlueprint
         shootWeaponProjectile(WeaponTag, shootPointTrans.position, shootPointTrans.rotation);
 
 
-        //Object original, Vector3 position, Quaternion rotation, Transform parent);
-        //   GameObject bullet = Instantiate(bulletPrefab, shootPointTrans.position, Quaternion.identity, BulletPoolObject.transform);
-        //Vector3 bulletVector = new Vector3(,0, bulletSpeed)
-        //  bullet.GetComponent<Rigidbody>().AddForce(0, 0, bulletSpeed);
 
     }
 
@@ -30,6 +28,14 @@ public class Weapon_Revolver : WeaponBlueprint
     // Update is called once per frame
     void Update()
     {
+        //mouseLook.XRot;
+    }
+
+    float XRotation = 0;
+    void rotateTowardsCursor()
+    {
 
     }
+
+
 }

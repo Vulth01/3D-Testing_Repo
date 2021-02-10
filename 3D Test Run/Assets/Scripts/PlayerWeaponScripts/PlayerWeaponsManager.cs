@@ -8,7 +8,7 @@ public class PlayerWeaponsManager : MonoBehaviour
 
     public GameObject startingGun;
     public Transform GunStartingPoint;
-    public Transform playerLookTrans;
+ 
     public WeaponBlueprint[] currentWeapons;
     public int equipedWeaponID;
 
@@ -34,6 +34,7 @@ public class PlayerWeaponsManager : MonoBehaviour
         GameObject gun = EquipWeapon(startingGun);
         gun.GetComponent<WeaponBlueprint>().weaponsManager = this;
 
+
     }
 
     GameObject EquipWeapon(GameObject weapon)
@@ -42,6 +43,7 @@ public class PlayerWeaponsManager : MonoBehaviour
         GameObject gun = Instantiate(weapon, GunStartingPoint);
         return gun;
     }
+
     GameObject SwapWeapons(GameObject weapon)
     {
 

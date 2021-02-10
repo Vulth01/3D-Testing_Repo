@@ -15,10 +15,11 @@ public class playerMovement : MonoBehaviour
     float GroundThreshold = 0.4f;
 
     public Animator playerAnimator;
+    public Transform playerMesh;
 
 
     public Transform groundCheckTrans;
-    public LayerMask goundMask;
+    public LayerMask groundMask;
 
 
     [Header("cached components")]
@@ -39,6 +40,7 @@ public class playerMovement : MonoBehaviour
     }
     void Update()
     {
+
         GroundCheck();
 
         if (isGrounded && velocity.y < 0)
@@ -55,7 +57,9 @@ public class playerMovement : MonoBehaviour
         jump();
         isGrounded = false;
     }
+    #region myOwnLeanScript
 
+    #endregion
     void PlayerMovement()
     {
         float x = Input.GetAxis("Horizontal");
@@ -67,8 +71,13 @@ public class playerMovement : MonoBehaviour
         {
             controller.Move(move * playerSprintSpeed * Time.deltaTime);
             isSprinting = false;
+            Debug.Log(controller.velocity.x);
         }
         controller.Move(move * playerMovementSpeed * Time.deltaTime);
+
+    }
+    void lean()
+    {
 
     }
     void jump()
@@ -89,10 +98,11 @@ public class playerMovement : MonoBehaviour
     }
     void GroundCheck()
     {
-        isGrounded = Physics.CheckSphere(groundCheckTrans.position, GroundThreshold, goundMask);
+        isGrounded = Physics.CheckSphere(groundCheckTrans.position, GroundThreshold, groundMask);
 
 
     }
+
     void ApplyGravity()
     {
         velocity.y += gravity * Time.deltaTime;

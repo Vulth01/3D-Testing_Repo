@@ -8,8 +8,10 @@ public class InputManager : MonoBehaviour
 
     [Header("playerInputSettings")]
 
+
     public float mouseSensitivity = 100f;
 
+    public TimeManager timeManager;
     void Start()
     {
 
@@ -23,8 +25,24 @@ public class InputManager : MonoBehaviour
 
     }
     // Update is called once per frame
+    bool timeIsSlowed = false;
     void Update()
     {
+        if (!Input.GetKeyDown(KeyCode.P))
+        {
+            return;
+        }
+        if (!timeIsSlowed)
+        {
+            timeManager.SlowTime();
+            timeIsSlowed = true;
+        }
+        else
+        {
+            timeManager.ReturnTime();
+            timeIsSlowed = false;
+        }
+
 
     }
 }

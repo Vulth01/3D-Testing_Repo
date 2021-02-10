@@ -1,23 +1,8 @@
 fileFormatVersion: 2
-guid: af4890d25de1f2b439e473827df00a41
+guid: 0ddf2df78c0a80146b14419f64c505f1
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: 6456019350050836147
-    second: metarig|A Balerina
-  - first:
-      74: 5324677858617436973
-    second: metarig|A Chop
-  - first:
-      74: -1180729537054630911
-    second: metarig|A Idle
-  - first:
-      74: 2618019555419461205
-    second: metarig|A Punch
-  - first:
-      74: -5792580633905797192
-    second: metarig|A RunCycle
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1

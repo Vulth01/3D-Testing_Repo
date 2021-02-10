@@ -11,7 +11,8 @@ public class WeaponBlueprint : MonoBehaviour
     public static int numWeapons;
 
     public string WeaponTag;
-    protected float bulletSpeed = 100f;
+    protected float bulletSpeed = 10f;
+    protected int bulletDamage = 10;
     protected float fireRate;
     [Header("weapon Components")]
     public GameObject bulletPrefab;
@@ -20,9 +21,10 @@ public class WeaponBlueprint : MonoBehaviour
 
     protected PlayerWeaponsManager playerWeaponsManager;
 
+    protected mouseLook mouseLook;
+
     protected GameObject playerObject;
 
-    protected Transform playerLookPoint;
 
     [HideInInspector]
     public PlayerWeaponsManager weaponsManager;
@@ -32,11 +34,9 @@ public class WeaponBlueprint : MonoBehaviour
     protected void setUpWeapon()
     {
         playerWeaponsManager = FindObjectOfType<PlayerWeaponsManager>();
+        mouseLook = FindObjectOfType<mouseLook>();
         playerObject = playerWeaponsManager.gameObject;
 
-        playerLookPoint = playerWeaponsManager.playerLookTrans;
-
-        Debug.Log(playerLookPoint.transform);
 
         bulletPooler = BulletPooling.Instance;
     }
@@ -46,21 +46,22 @@ public class WeaponBlueprint : MonoBehaviour
         GameObject bullet = bulletPooler.SpawnFromPool(bulletTag, BulletPosition, BulletRotation);
 
 
-        
-       
-       
-        bullet.GetComponent<Rigidbody>().AddForce( transform.right.normalized*bulletSpeed);
+
+
+
+        bullet.GetComponent<Rigidbody>().AddForce(transform.right.normalized * bulletSpeed, ForceMode.Impulse);
+        bullet.GetComponent<bullet>().Damage = bulletDamage;
 
     }
     public void shootWeaponRaycast()
     {
-        
 
 
-        
-       
-       
-      
+
+
+
+
+
 
     }
 }
