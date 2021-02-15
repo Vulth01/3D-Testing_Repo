@@ -71,7 +71,7 @@ public class playerMovement : MonoBehaviour
         {
             controller.Move(move * playerSprintSpeed * Time.deltaTime);
             isSprinting = false;
-            Debug.Log(controller.velocity.x);
+         
         }
         controller.Move(move * playerMovementSpeed * Time.deltaTime);
 
